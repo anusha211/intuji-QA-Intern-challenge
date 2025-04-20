@@ -31,7 +31,10 @@ All scenarios are based on manual test cases defined in an accompanying Excel sh
 git clone https://github.com/your-username/demoqa-form-cypress-tests.git
 cd demoqa-form-cypress-tests
 
-2. Install dependencies
+---
+
+### 2. Install dependencies
+```bash
 npm install
 
 3. Open Cypress Test Runner
