@@ -9,6 +9,7 @@ describe('DemoQA Practice Form - Validation Tests', () => {
       cy.visit('https://demoqa.com/automation-practice-form');
     });
 
+
   
     it('TC001 - Validates correct input for first name, last name, email', () => {
       cy.get('#firstName').type('Anusha');
@@ -85,7 +86,7 @@ describe('DemoQA Practice Form - Validation Tests', () => {
       cy.get('#uploadPicture').selectFile('cypress/fixtures/file.xlsx');
       // No built-in error, you may need to check via API or UI behavior
     });
-    
+
     it('TC012 - Upload .jpg >200KB (edge)', () => {
         cy.get('#uploadPicture').selectFile('cypress/fixtures/largefile.jpg');
         // You can assert max size at the API if it's rejected
@@ -120,4 +121,42 @@ describe('DemoQA Practice Form - Validation Tests', () => {
       cy.get('#state .css-1wa3eu0-placeholder').should('contain.text', 'Select State');
     });
   });
+
+ 
+  //bugs detected earlier
+
+  it('Bug 1 - Form submits without filling all required fields', () => {
+    cy.visit('https://demoqa.com/automation-practice-form');
+    cy.get('#firstName').type('John');
+    cy.get('#submit').click();
   
+    // Check if validation errors appear for other required fields
+    cy.get('#lastName').should('have.class', 'was-validated');
+    cy.get('#userNumber').should('have.class', 'was-validated');
+    cy.get('#genterWrapper').should('have.class', 'was-validated');
+  
+    // Ensure success modal does NOT appear
+    cy.get('.modal-content').should('not.exist');
+  });
+
+  it('Bug 2 - Mobile number input allows non-numeric characters', () => {
+    cy.visit('https://demoqa.com/automation-practice-form');
+    cy.get('#userNumber').type('abc123');
+  
+    // Assert that only numeric characters are accepted
+    cy.get('#userNumber').should('have.value', '123'); // Expected to strip 'abc', if validation applied
+  
+    // Alternatively, assert that non-numeric input is rejected entirely
+    // cy.get('#userNumber').should('have.value', ''); 
+  });
+
+  it('Bug 3 - "Other" gender option does not allow custom input', () => {
+    cy.visit('https://demoqa.com/automation-practice-form');
+  
+    cy.contains('label', 'Other').click();
+  
+    // Check if an input field appears for custom gender input (expected but not implemented)
+    cy.get('input[placeholder="Please specify"]').should('exist'); // This will fail as the input doesn't exist
+  });
+  
+   
