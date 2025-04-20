@@ -10,16 +10,11 @@ All scenarios are based on manual test cases defined in an accompanying Excel sh
 ## ✅ Covered Test Scenarios
 
 - **Positive Tests**
-  - Valid name, email, DOB, subject, file upload, address, dropdown selections
+  
 - **Negative Tests**
-  - Invalid email format
-  - Incorrect DOB format
-  - Unaccepted file types
-  - Empty address, city, or state
+
 - **Edge Cases**
-  - Overlength name, subject, and address fields
-  - Leap year DOB entry
-  - Oversized image upload
+
 
 ---
 
