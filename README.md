@@ -18,6 +18,9 @@ All scenarios are based on manual test cases defined in an accompanying Excel sh
 
 ---
 
+## ✅ testscenario_and_testcase_and_bugreport file
+ - Excel file containing test scenarios, testcases and bugreports in different pages.
+
 ## 🚀 Getting Started
 
 ### 1. Clone the repository
