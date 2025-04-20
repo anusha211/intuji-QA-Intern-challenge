@@ -1,4 +1,4 @@
-// Ignore cross-origin script errors
+// Ignore cross-origin script error
 Cypress.on('uncaught:exception', (err, runnable) => {
     return false;
   });
