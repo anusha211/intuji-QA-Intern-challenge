@@ -34,8 +34,8 @@ cd demoqa-form-cypress-tests
 ---
 
 ### 2. Install dependencies
-```bash
 npm install
+
 
 3. Open Cypress Test Runner
 npx cypress open
