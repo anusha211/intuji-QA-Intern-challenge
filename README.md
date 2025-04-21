@@ -1,4 +1,4 @@
-# 🧪 Cypress Automation: DemoQA Practice Form
+#  Cypress Automation: DemoQA Practice Form
 
 This project uses [Cypress](https://www.cypress.io/) to perform end-to-end testing on the [DemoQA Practice Form](https://demoqa.com/automation-practice-form). It validates form inputs such as text fields, email, date of birth, subject input, file upload, address fields, and dropdown selections.  
 
